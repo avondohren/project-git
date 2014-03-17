@@ -48,10 +48,18 @@ end
 
 class Teacher < ActiveRecord::Base
   belongs_to :klass
+  
+  def name 
+    @fname + " " + @lname
+  end
 end
 
 class Student < ActiveRecord::Base
   belongs_to :roster
+  
+  def name 
+    @fname + " " + @lname
+  end
 end
 
 class Klass < ActiveRecord::Base

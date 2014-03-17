@@ -26,9 +26,22 @@ class UniversitySystem < Sinatra::Base
   
   post "/add/term" do
     name = params[:name]
-    new_task = Term.create({:name => name})
+    new_term = Term.create({:name => name})
     
     redirect to("/term/#{new_term.id}")
+  end
+  
+  get "/add/student" do
+    erb :add_student
+  end
+  
+  post "/add/student" do
+    fname = params[:fname]
+    lname = params[:lname]
+    
+    new_student = Student.create({:fname => fname, :lname => lname})
+    
+    redirect to("/student/#{new_student.id}")
   end
   
   get "/list/term" do
