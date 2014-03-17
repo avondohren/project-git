@@ -73,6 +73,11 @@ class UniversitySystem < Sinatra::Base
     erb :list_students
   end
 
+  get "/student/:id" do
+    @student = Student.find_by_id(params[:id])
+    erb :student
+  end
+
   get "/list/teachers" do
     @teachers = Teacher.all
     erb :list_teachers
