@@ -6,7 +6,7 @@
 	<div>
 		<p>List of Students</p>
 	<% @students.each do |student| %>
-		<p>Student ID:<%= student.id %>     Student Name:<%= student.name %>">
+		<p>Student ID:<%= student.id %>     Student Name:<%= student.fname %> <%= student.lname%>">
 	<% end %>
 	</div>
 <% end %>
