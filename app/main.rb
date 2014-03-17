@@ -83,4 +83,22 @@ class UniversitySystem < Sinatra::Base
     @klass = Klass.find(params[:id])
     erb :klass
   end
+  
+  get "/enroll" do
+    @students = Student.all
+    @klasses = Klass.all
+    
+    erb :enroll
+  end
+  
+  post "/enroll" do
+    klass_id = params[:klass_id].to_i
+    student_id = params[:student_id].to_i
+    
+    new_roster = Roster.create({
+      :klass_id => klass_id,
+      :student_id => student_id
+    })
+    
+    redirect to("/class/#{klass_id}")
 end
