@@ -12,6 +12,11 @@ class UniversitySystem < Sinatra::Base
   end
   
   get "/" do
+    @terms = Term.all
+    @klasses = Klass.all
+    @teachers = Teacher.all
+    @students = Student.all
+    
     erb :home
   end
   
