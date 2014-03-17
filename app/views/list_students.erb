@@ -1,0 +1,16 @@
+<h1>List of Students</h1>
+
+<table>
+	<thead>
+		<th>Student ID</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+	</thead>
+	<tbody>
+		<% @students.each do |student| %>
+			<td><%= student.id %>
+			<td><%= student.fname %></td>
+			<td><%= student.lname %></td>
+		<% end %>
+	</tbody>
+</table>
