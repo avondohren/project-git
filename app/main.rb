@@ -46,4 +46,10 @@ class Sample < Sinatra::Base
     @students = Student.all
     erb :list_students
   end
+
+  get "/list/teachers" do
+    @teachers = Teacher.all
+    erb :list_teachers
+  end
+
 end
