@@ -1,0 +1,13 @@
+<h1>Enroll a Student in a Class</h1>
+
+<form method="post" action="/enroll">
+	Select Class: <select name="klass_id">
+	<% @klasses.each do |klass| %>
+		<option value="<%= klass.id %>"><%= klass.name %></option>
+	<% end %></select><br />
+	Select Student: <select name="student_id">
+	<% @students.each do |student| %>
+		<option value="<%= student.id %>"><%= student.fname + " " + student.lname%></option>
+	<% end %></select><br />
+	<input type="submit" value="Enroll">
+</form>
