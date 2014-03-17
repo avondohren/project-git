@@ -8,7 +8,7 @@
 	</thead>
 	<tbody>
 		<% @klasses.each do |klass| %>
-			<td><%= Term.find(klass.term_id).name %>
+			<td><%= Term.find(klass.term_id).name %></td>
 			<td><%= klass.name %></td>
 			<td><%= Teacher.find(klass.teacher_id).lname %></td>
 		<% end %>
