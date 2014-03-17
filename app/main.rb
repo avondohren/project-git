@@ -21,7 +21,7 @@ class Sample < Sinatra::Base
   
   post "/add/term" do
     name = params[:name]
-    new_task = Term.create({:name => name})
+    new_term = Term.create({:name => name})
     
     redirect to("/term/#{new_term.id}")
   end
