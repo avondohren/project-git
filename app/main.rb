@@ -29,10 +29,10 @@ class Sample < Sinatra::Base
       :teacher_id => params[:teacher_id]
     })
     
-    redirect to("class/#{new_klass.id}")
+    redirect to("/class/#{new_klass.id}")
   end
   
-  get "class/:id" do
+  get "/class/:id" do
     @klass = Klass.find(params[:id])
     erb :klass
   end
