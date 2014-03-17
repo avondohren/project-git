@@ -1,0 +1,12 @@
+<h1>Students</h1>
+
+<% if @students.length <= 0 %>
+	<div>The University currently has no students on record</div>
+<% else %>
+	<div>
+		<p>List of Students</p>
+	<% @students.each do |student| %>
+		<p>Student ID:<%= student.id %>     Student Name:<%= student.name %>">
+	<% end %>
+	</div>
+<% end %>

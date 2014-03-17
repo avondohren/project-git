@@ -11,4 +11,9 @@ class Sample < Sinatra::Base
   get "/" do
     erb :home
   end
+  
+  get "list/students" do
+    @students = Student.all
+    erb :list_students
+  end
 end
