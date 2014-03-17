@@ -1,0 +1,14 @@
+<h1>List of Terms</h1>
+
+<table>
+	<thead>
+		<th>ID</th>
+		<th>Name</th>
+	</thead>
+	<tbody>
+		<% @terms.each do |term| %>
+			<td><%= term.id %></td>
+			<td><%= term.name %></td>
+		<% end %>
+		</tbody>
+	</table>
