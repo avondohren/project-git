@@ -1,3 +1,3 @@
 require './app/main.rb'
 
-run Sample
+run UniversitySystem
