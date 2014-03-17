@@ -35,4 +35,15 @@ class Sample < Sinatra::Base
     @term = Term.find(params[:id])
     erb :term
   end
+
+  get "/list/klasses" do
+    @klasses = Klass.all
+    
+    erb :list_klasses
+  end
+  
+  get "/list/students" do
+    @students = Student.all
+    erb :list_students
+  end
 end
