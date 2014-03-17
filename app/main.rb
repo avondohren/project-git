@@ -13,7 +13,7 @@ class Sample < Sinatra::Base
   end
   
   get "/list/klasses" do
-    @klasses = Klasses.find_all
+    @klasses = Klass.all
     
     erb :list_klasses
   end
