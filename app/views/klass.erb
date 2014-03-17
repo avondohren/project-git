@@ -1,0 +1,7 @@
+<h1>Class Information</h1>
+
+<p>
+	Term: <%= Term.find(@klass.term_id).name %><br />
+	Class Name: <%= @klass.name %><br />
+	Teacher: <%= Teacher.find(@klass.teacher_id).lname %>
+</p>
