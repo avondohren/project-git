@@ -1,0 +1,16 @@
+<h1>List of Classes</h1>
+
+<table>
+	<thead>
+		<th>Term</th>
+		<th>Class Name</th>
+		<th>Teacher</th>
+	</thead>
+	<tbody>
+		<% @klasses.each do |klass| %>
+			<td><%= Term.find(klass.term_id).name %>
+			<td><%= klass.name %></td>
+			<td><%= Teacher.find(klass.teacher_id).lname %></td>
+		<% end %>
+	</tbody>
+</table>

@@ -11,4 +11,10 @@ class Sample < Sinatra::Base
   get "/" do
     erb :home
   end
+  
+  get "/list/klasses" do
+    @klasses = Klass.all
+    
+    erb :list_klasses
+  end
 end
