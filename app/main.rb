@@ -4,7 +4,7 @@ require 'logger'
 require 'pry'
 require_relative './controllers/functions'
 
-class Sample < Sinatra::Base
+class UniversitySystem < Sinatra::Base
   helpers do
   end
   
