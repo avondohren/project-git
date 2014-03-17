@@ -17,4 +17,9 @@ class Sample < Sinatra::Base
     
     erb :list_klasses
   end
+  
+  get "/list/students" do
+    @students = Student.all
+    erb :list_students
+  end
 end
