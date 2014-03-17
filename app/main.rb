@@ -39,6 +39,19 @@ class UniversitySystem < Sinatra::Base
     redirect to("/student/#{new_student.id}")
   end
   
+  get "/add/teacher" do
+    erb :add_teacher
+  end
+  
+  post "/add/teacher" do
+    fname = params[:fname]
+    lname = params[:lname]
+    
+    new_teacher = Teacher.create({:fname => fname, :lname => lname})
+    
+    redirect to("/teacher/#{new_teacher.id}")
+  end
+  
   get "/list/term" do
     @terms = Term.all
     erb :list_term
@@ -58,6 +71,11 @@ class UniversitySystem < Sinatra::Base
   get "/list/students" do
     @students = Student.all
     erb :list_students
+  end
+
+  get "/student/:id" do
+    @student = Student.find_by_id(params[:id])
+    erb :student
   end
 
   get "/list/teachers" do
