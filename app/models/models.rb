@@ -42,5 +42,29 @@ ActiveRecord::Schema.define do
     create_table :terms do |table|
       table.column :name,       :string
     end
-  end
+  end  
+end
+
+
+class Teacher < ActiveRecord::Base
+  belongs_to :klass
+end
+
+class Student < ActiveRecord::Base
+  belongs_to :roster
+end
+
+class Klass < ActiveRecord::Base
+  belongs_to :term
+  belongs_to :roster
+  has_one :teacher
+end
+
+class Roster < ActiveRecord::Base
+  has_many :klasses
+  has_many :students
+end
+
+class Term < ActiveRecord::Base
+  has_many :klasses
 end

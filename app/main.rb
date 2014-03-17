@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative './functions'
+require_relative './controllers/functions'
 
 class Sample < Sinatra::Base
   helpers do
