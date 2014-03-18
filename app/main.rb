@@ -129,4 +129,5 @@ class UniversitySystem < Sinatra::Base
     })
     
     redirect to("/class/#{klass_id}")
+  end
 end
