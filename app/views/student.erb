@@ -9,7 +9,7 @@
 	</thead>
 	<tbody>
 		<% @roster.each do |roster| %>
-			<% klass = Klass.find_by_id(roster.id) %>
+			<% klass = Klass.find_by_id(roster.klass_id) %>
 			<td><%= klass.term_id %></td>
 			<td><%= klass.name %></td>
 		<% end %>
