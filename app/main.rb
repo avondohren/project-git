@@ -57,9 +57,9 @@ class UniversitySystem < Sinatra::Base
     redirect to("/teacher/#{new_teacher.id}")
   end
   
-  get "/list/term" do
+  get "/list/terms" do
     @terms = Term.all
-    erb :list_term
+    erb :list_terms
   end
   
   get "/term/:id" do
