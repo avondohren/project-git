@@ -102,14 +102,10 @@ class UniversitySystem < Sinatra::Base
   end
   
   post "/add/class" do
-    binding.pry
-    term_id = Term.find_by_name(params[:term_name]).id
-    teacher_id = Teacher.find_by_lname(params[:teacher_lname]).id
-    
     new_klass = Klass.create({
-      :term_id => term_id,
+      :term_id => params[:term_id],
       :name => params[:name],
-      :teacher_id => teacher_id
+      :teacher_id => params[:teacher_id]
     })
     
     redirect to("/class/#{new_klass.id}")
