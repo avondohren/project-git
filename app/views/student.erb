@@ -1,2 +1,17 @@
 <h1>Student Information</h1>
 <p>Name: <%= @student.name %></p>
+
+
+<table>
+	<thead>
+		<th>Class Term</th>
+		<th>Class Name</th>
+	</thead>
+	<tbody>
+		<% @roster.each do |roster| %>
+			<% klass = Klass.find_by_id(roster.id) %>
+			<td><%= klass.term_id %></td>
+			<td><%= klass.name %></td>
+		<% end %>
+	</tbody>
+</table>
