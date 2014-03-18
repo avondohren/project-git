@@ -7,8 +7,10 @@
 	</thead>
 	<tbody>
 		<% @terms.each do |term| %>
-		<td><%= term.id %></td>
-		<td><%= term.name %></td>
+		<tr>
+			<td><%= term.id %></td>
+			<td><%= term.name %></td>
+		</tr>
 		<% end %>
 	</tbody>
 </table>
