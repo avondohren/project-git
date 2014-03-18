@@ -76,6 +76,7 @@ class UniversitySystem < Sinatra::Base
 
   get "/teacher/:id" do
     @teacher = Teacher.find_by_id(params[:id])
+    @klasses = Klass.where(:teacher_id => params[:id])
     erb :teacher
   end
 
