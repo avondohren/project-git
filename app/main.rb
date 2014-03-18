@@ -97,6 +97,8 @@ class UniversitySystem < Sinatra::Base
   end
 
   get "/add/class" do
+    @terms = Term.all
+    @teachers = Teacher.all
     erb :add_klass
   end
   
