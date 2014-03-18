@@ -3,5 +3,12 @@
 <p>
 	Term: <%= Term.find(@klass.term_id).name %><br />
 	Class Name: <%= @klass.name %><br />
-	Teacher: <%= Teacher.find(@klass.teacher_id).lname %>
-</p>
+	Teacher: <%= Teacher.find(@klass.teacher_id).lname %><br />
+	Students:</p>
+<table>
+	<% @klass.rosters.each do |roster| %>
+		<tr>
+			<td><%= Student.find(roster.student_id).name %></td>
+		</tr>
+	<% end %>
+</table>

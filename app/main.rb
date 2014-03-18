@@ -12,6 +12,11 @@ class UniversitySystem < Sinatra::Base
   end
   
   get "/" do
+    @terms = Term.all
+    @klasses = Klass.all
+    @teachers = Teacher.all
+    @students = Student.all
+    
     erb :home
   end
   
@@ -59,6 +64,7 @@ class UniversitySystem < Sinatra::Base
   
   get "/term/:id" do
     @term = Term.find(params[:id])
+    @klasses = Klass.where(:term_id => params[:id])
     erb :term
   end
 
@@ -106,6 +112,7 @@ class UniversitySystem < Sinatra::Base
   
   get "/class/:id" do
     @klass = Klass.find(params[:id])
+    
     erb :klass
   end
   
