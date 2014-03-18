@@ -9,7 +9,8 @@
 	</thead>
 	<tbody>
 		<% @klasses.each do |klass| %>
-			<td><%= klass.term_id %></td>
+			<% term = Term.find_by_id(klass.term_id)%>
+			<td><%= term.name %></td>
 			<td><%= klass.name %></td>
 		<% end %>
 	</tbody>
