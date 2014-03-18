@@ -1,2 +1,17 @@
 <h1>Term Information</h1>
 <p>Name: <%= @term.name %></p>
+
+<table>
+	<thead>
+		<th>Term</th>
+		<th>Class Name</th>
+		<th>Teacher</th>
+	</thead>
+	<tbody>
+		<% @klasses.each do |klass| %>
+			<td><%= Term.find(klass.term_id).name %></td>
+			<td><%= klass.name %></td>
+			<td><%= Teacher.find(klass.teacher_id).name %></td>
+		<% end %>
+	</tbody>
+</table>

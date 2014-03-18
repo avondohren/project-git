@@ -64,6 +64,7 @@ class UniversitySystem < Sinatra::Base
   
   get "/term/:id" do
     @term = Term.find(params[:id])
+    @klasses = Klass.where(:term_id => params[:id])
     erb :term
   end
 
