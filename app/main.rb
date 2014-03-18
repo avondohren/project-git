@@ -64,6 +64,7 @@ class UniversitySystem < Sinatra::Base
 
   get "/student/:id" do
     @student = Student.find_by_id(params[:id])
+    @rosters = Roster.where(:student_id => params[:id])
     erb :student
   end
 
