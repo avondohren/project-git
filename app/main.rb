@@ -109,6 +109,7 @@ class UniversitySystem < Sinatra::Base
   
   get "/class/:id" do
     @klass = Klass.find(params[:id])
+    
     erb :klass
   end
   

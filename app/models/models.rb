@@ -50,7 +50,7 @@ class Teacher < ActiveRecord::Base
   belongs_to :klass
   
   def name 
-    @fname + " " + @lname
+    fname + " " + lname
   end
 end
 
@@ -58,18 +58,18 @@ class Student < ActiveRecord::Base
   belongs_to :roster
   
   def name 
-    @fname + " " + @lname
+    fname + " " + lname
   end
 end
 
 class Klass < ActiveRecord::Base
   belongs_to :term
-  belongs_to :roster
+  has_many :rosters
   has_one :teacher
 end
 
 class Roster < ActiveRecord::Base
-  has_many :klasses
+  belongs_to :klass
   has_many :students
 end
 
