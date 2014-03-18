@@ -67,6 +67,16 @@ class UniversitySystem < Sinatra::Base
     erb :term
   end
 
+  get "/student/:id" do
+    @student = Student.find_by_id(params[:id])
+    erb :student
+  end
+
+  get "/teacher/:id" do
+    @teacher = Teacher.find_by_id(params[:id])
+    erb :teacher
+  end
+
   get "/list/classes" do
     @klasses = Klass.all
     
@@ -76,11 +86,6 @@ class UniversitySystem < Sinatra::Base
   get "/list/students" do
     @students = Student.all
     erb :list_students
-  end
-
-  get "/student/:id" do
-    @student = Student.find_by_id(params[:id])
-    erb :student
   end
 
   get "/list/teachers" do
