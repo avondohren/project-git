@@ -10,7 +10,8 @@
 	<tbody>
 		<% @roster.each do |roster| %>
 			<% klass = Klass.find_by_id(roster.klass_id) %>
-			<td><%= klass.term_id %></td>
+			<% term = Term.find_by_id(klass.term_id)%>
+			<td><%= term.name %></td>
 			<td><%= klass.name %></td>
 		<% end %>
 	</tbody>
